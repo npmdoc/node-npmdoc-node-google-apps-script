@@ -1,0 +1,670 @@
+<html><head></head><body><div class="apidocDiv">
+<style>
+/*csslint
+*/
+.apidocDiv {
+    background: #fff;
+    font-family: Arial, Helvetica, sans-serif;
+}
+.apidocDiv a[href] {
+    color: #33f;
+    font-weight: bold;
+    text-decoration: none;
+}
+.apidocDiv a[href]:hover {
+    text-decoration: underline;
+}
+.apidocCodeCommentSpan {
+    background: #bbf;
+    color: #000;
+    display: block;
+}
+.apidocCodeKeywordSpan {
+    color: #d00;
+    font-weight: bold;
+}
+.apidocCodePre {
+    background: #eef;
+    border: 1px solid;
+    color: #777;
+    padding: 5px;
+    white-space: pre-wrap;
+}
+.apidocFooterDiv {
+    margin-top: 20px;
+    text-align: center;
+}
+.apidocModuleLi {
+    margin-top: 10px;
+}
+.apidocSectionDiv {
+    border-top: 1px solid;
+    margin-top: 20px;
+}
+.apidocSignatureSpan {
+    color: #777;
+    font-weight: bold;
+}
+</style>
+<h1>api documentation for
+    <a href="https://github.com/danthareja/node-google-apps-script">node-google-apps-script (v1.1.5)</a>
+</h1>
+<h4>The easiest way to develop Google Apps Script projects</h4>
+<div class="apidocSectionDiv"><a href="#apidoc.tableOfContents" id="apidoc.tableOfContents"><h1>table of contents</h1></a><ol>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-google-apps-script">module node-google-apps-script</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.auth">
+            function <span class="apidocSignatureSpan">node-google-apps-script.</span>auth
+            <span class="apidocSignatureSpan">(clientSecretPath, withWebserver)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.init">
+            function <span class="apidocSignatureSpan">node-google-apps-script.</span>init
+            <span class="apidocSignatureSpan">(fileId, options)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.upload">
+            function <span class="apidocSignatureSpan">node-google-apps-script.</span>upload
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-google-apps-script.</span>defaults</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-google-apps-script.</span>manifestor</span>
+
+        </li>
+
+        <li>
+
+            <span class="apidocSignatureSpan">object <span class="apidocSignatureSpan">node-google-apps-script.</span>util</span>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-google-apps-script.manifestor">module node-google-apps-script.manifestor</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.manifestor.build">
+            function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>build
+            <span class="apidocSignatureSpan">(externalFiles)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.manifestor.get">
+            function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>get
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.manifestor.getExternalFiles">
+            function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>getExternalFiles
+            <span class="apidocSignatureSpan">(fileId)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.manifestor.set">
+            function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>set
+            <span class="apidocSignatureSpan">(config)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.manifestor.throwIfConfig">
+            function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>throwIfConfig
+            <span class="apidocSignatureSpan">()</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+    <li class="apidocModuleLi"><a href="#apidoc.module.node-google-apps-script.util">module node-google-apps-script.util</a><ol>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.util.getFileExtension">
+            function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>getFileExtension
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.util.getFileType">
+            function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>getFileType
+            <span class="apidocSignatureSpan">(file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.util.getFilesFromDisk">
+            function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>getFilesFromDisk
+            <span class="apidocSignatureSpan">(subdir)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.util.hasFileOnDisk">
+            function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>hasFileOnDisk
+            <span class="apidocSignatureSpan">(filesOnDisk, file)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.util.swapGStoJS">
+            function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>swapGStoJS
+            <span class="apidocSignatureSpan">(filename)</span>
+            </a>
+
+        </li>
+
+        <li>
+
+            <a class="apidocElementLiA" href="#apidoc.element.node-google-apps-script.util.updateFileSource">
+            function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>updateFileSource
+            <span class="apidocSignatureSpan">(existingFile, newFile)</span>
+            </a>
+
+        </li>
+
+    </ol></li>
+
+</ol></div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-google-apps-script" id="apidoc.module.node-google-apps-script">module node-google-apps-script</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.auth" id="apidoc.element.node-google-apps-script.auth">
+        function <span class="apidocSignatureSpan">node-google-apps-script.</span>auth
+        <span class="apidocSignatureSpan">(clientSecretPath, withWebserver)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function auth(clientSecretPath, withWebserver) {
+  return fs.lstatAsync(defaults.STORAGE_FILE)
+    .then(function() {
+      console.log(defaults.STORAGE_FILE + ' already exists. Remove it to re-authenticate node-google-apps-script');
+      return Promise.resolve();
+    })
+    .catch(function(err) {
+      if (!clientSecretPath) {
+        throw defaults.STORAGE_FILE + ' does not exist yet. Specify a credential file with `--auth ~/Downloads/client_secret_abcd
+.json`';
+      }
+      return performAuthenticationFlow(clientSecretPath, withWebserver);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.init" id="apidoc.element.node-google-apps-script.init">
+        function <span class="apidocSignatureSpan">node-google-apps-script.</span>init
+        <span class="apidocSignatureSpan">(fileId, options)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function init(fileId, options) {
+  var subdir = options.subdir || defaults.DEFAULT_SUBDIR;
+
+  if(!fileIdIsValid(fileId)) {
+    return;
+  }
+
+  var config = {
+    path: subdir,
+    fileId: fileId,
+    key: options.key
+  };
+
+  var overwritePromise = options.overwrite ?
+    Promise.resolve() :
+    manifestor.throwIfConfig();
+
+  return overwritePromise
+    .then(function() {
+      return manifestor.set(config);
+    })
+    .then(function() {
+      return mkdirp(subdir);
+    })
+    .then(function(config) {
+      return manifestor.getExternalFiles(fileId)
+    })
+    .map(function(file) {
+      return writeExternalFile(file, subdir)
+    })
+    .catch(function(err) {
+      console.log('Error running init command'.red);
+      throw err;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.upload" id="apidoc.element.node-google-apps-script.upload">
+        function <span class="apidocSignatureSpan">node-google-apps-script.</span>upload
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function upload() {
+  console.log('Pushing back up to Google Drive...');
+
+  var fileId; // Hold in closure to avoid promise nesting
+
+  return manifestor.get()
+    .then(function(config) {
+      fileId = config.fileId;
+      return manifestor.getExternalFiles(fileId)
+    })
+    .then(function(externalFiles) {
+      return manifestor.build(externalFiles);
+    })
+    .then(function(files) {
+      return sendToGoogle(files, fileId);
+    })
+    .then(function() {
+      console.log('The latest files were successfully uploaded to your Apps Script project.'.green);
+    })
+    .catch(function(err) {
+      console.log('Upload failed.'.red);
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+
+
+
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-google-apps-script.manifestor" id="apidoc.module.node-google-apps-script.manifestor">module node-google-apps-script.manifestor</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.manifestor.build" id="apidoc.element.node-google-apps-script.manifestor.build">
+        function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>build
+        <span class="apidocSignatureSpan">(externalFiles)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">build = function (externalFiles) {
+  return getConfig().get('path')
+    .then(util.getFilesFromDisk)
+    .then(function(files) {
+
+      // for each manifest file, if it has an equivalent on disk, keep it
+      // otherwise trash it
+      var filesToUpload = _.filter(externalFiles, function(externalFile) {
+        return util.hasFileOnDisk(files, externalFile);
+      });
+
+      _.each(files, function(file) {
+        // Add new file or update existing record
+        var manifestFile = getFileInManifest(filesToUpload, file);
+        if (manifestFile === undefined) {
+          // add
+          filesToUpload.push({
+            name: file.name,
+            type: util.getFileType(file),
+            source: file.content
+          });
+
+        } else {
+          // update
+          util.updateFileSource(manifestFile, file);
+        }
+      });
+
+      return filesToUpload;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.manifestor.get" id="apidoc.element.node-google-apps-script.manifestor.get">
+        function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>get
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getConfig() {
+  return fs.readFileAsync(defaults.CONFIG_NAME)
+    .then(JSON.parse)
+    .catch(SyntaxError, function(err) {
+      console.log('Error parsing config'.red);
+      throw err;
+    })
+    .error(function(err) {
+      console.log('Config does not exist'.red);
+      throw err;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+/**
+  build generates a manifest to be uploaded to google drive
+  @param externalFiles {Object} files in the cloud
+  @return {Object} manifest
+ */
+var build = function(externalFiles) {
+  return getConfig().<span class="apidocCodeKeywordSpan">get</span>('path')
+    .then(util.getFilesFromDisk)
+    .then(function(files) {
+
+// for each manifest file, if it has an equivalent on disk, keep it
+// otherwise trash it
+var filesToUpload = _.filter(externalFiles, function(externalFile) {
+  return util.hasFileOnDisk(files, externalFile);
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.manifestor.getExternalFiles" id="apidoc.element.node-google-apps-script.manifestor.getExternalFiles">
+        function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>getExternalFiles
+        <span class="apidocSignatureSpan">(fileId)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getExternalFiles(fileId) {
+  return authenticate()
+    .then(function(auth) {
+      return getProjectFiles(fileId, auth);
+    })
+    .catch(function(err) {
+      console.log('Script file ID not found. Please input an ID and try again.'.red);
+      throw err;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.manifestor.set" id="apidoc.element.node-google-apps-script.manifestor.set">
+        function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>set
+        <span class="apidocSignatureSpan">(config)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function setConfig(config) {
+  return fs.writeFileAsync(defaults.CONFIG_NAME, JSON.stringify(config, "", 2))
+    .then(function() {
+      return config;
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.manifestor.throwIfConfig" id="apidoc.element.node-google-apps-script.manifestor.throwIfConfig">
+        function <span class="apidocSignatureSpan">node-google-apps-script.manifestor.</span>throwIfConfig
+        <span class="apidocSignatureSpan">()</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function throwIfConfig() {
+  return fs.readFileAsync(defaults.CONFIG_NAME)
+    .then(JSON.parse)
+    .then(function() {
+      throw 'Config already exists. Cowardly refusing to overwrite.';
+    })
+    .error(function() {
+      // swallow error
+    });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocSectionDiv">
+<h1><a href="#apidoc.module.node-google-apps-script.util" id="apidoc.module.node-google-apps-script.util">module node-google-apps-script.util</a></h1>
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.util.getFileExtension" id="apidoc.element.node-google-apps-script.util.getFileExtension">
+        function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>getFileExtension
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFileExtension(file) {
+  if (file.type === 'server_js') return '.js';
+  if (file.type === 'html') return '.html';
+  throw new Error('Unsupported file type found');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.util.getFileType" id="apidoc.element.node-google-apps-script.util.getFileType">
+        function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>getFileType
+        <span class="apidocSignatureSpan">(file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFileType(file) {
+  if (file.ext === '.js') return 'server_js';
+  if (file.ext === '.gs') return 'server_js';
+  if (file.ext === '.html') return 'html';
+  throw new Error('Unsupported file type found. Google Apps Script only allows .js and .html');
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+      _.each(files, function(file) {
+// Add new file or update existing record
+var manifestFile = getFileInManifest(filesToUpload, file);
+if (manifestFile === undefined) {
+  // add
+  filesToUpload.push({
+    name: file.name,
+    type: util.<span class="apidocCodeKeywordSpan">getFileType</span>(file),
+    source: file.content
+  });
+
+} else {
+  // update
+  util.updateFileSource(manifestFile, file);
+}
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.util.getFilesFromDisk" id="apidoc.element.node-google-apps-script.util.getFilesFromDisk">
+        function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>getFilesFromDisk
+        <span class="apidocSignatureSpan">(subdir)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function getFilesFromDisk(subdir) {
+  return new Promise(function(resolve, reject) {
+
+    var filesOnDisk = [];
+
+    // Only iterate through supported .js, .gs and .html files in dir
+    dir.readFiles(subdir, { match: /.js$|.gs$|.html$/ },
+      // Invoke this callback on each file
+      function(err, content, filename, next) {
+        if (err) return reject(err);
+
+        // Parse file's absolute path and add its content to result object
+        file = path.parse(filename);
+        file.content = content;
+
+        filesOnDisk.push(file);
+
+        // Continue to next file
+        next();
+      },
+      // finished callback.
+      function(err) {
+        if (err) return reject(err);
+        resolve(filesOnDisk);
+      });
+  })
+  .error(function() {
+    // swallow ENOENT
+    return [];
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.util.hasFileOnDisk" id="apidoc.element.node-google-apps-script.util.hasFileOnDisk">
+        function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>hasFileOnDisk
+        <span class="apidocSignatureSpan">(filesOnDisk, file)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function hasFileOnDisk(filesOnDisk, file) {
+  return _.any(filesOnDisk, function(fileOnDisk) {
+    var sameName = file.name === fileOnDisk.name;
+    var sameType = file.type === getFileType(fileOnDisk);
+    return sameName &amp;&amp; sameType;
+  });
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  return getConfig().get('path')
+    .then(util.getFilesFromDisk)
+    .then(function(files) {
+
+// for each manifest file, if it has an equivalent on disk, keep it
+// otherwise trash it
+var filesToUpload = _.filter(externalFiles, function(externalFile) {
+  return util.<span class="apidocCodeKeywordSpan">hasFileOnDisk</span>(files, externalFile);
+});
+
+_.each(files, function(file) {
+  // Add new file or update existing record
+  var manifestFile = getFileInManifest(filesToUpload, file);
+  if (manifestFile === undefined) {
+    // add
+...</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.util.swapGStoJS" id="apidoc.element.node-google-apps-script.util.swapGStoJS">
+        function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>swapGStoJS
+        <span class="apidocSignatureSpan">(filename)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function swapGStoJS(filename) {
+  if (filename.indexOf('.gs') === filename.length - 3) {
+    return filename.substr(0, filename.lastIndexOf('.gs')) + '.js';
+  }
+  return filename;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    </ul>
+
+
+
+    <h2>
+        <a href="#apidoc.element.node-google-apps-script.util.updateFileSource" id="apidoc.element.node-google-apps-script.util.updateFileSource">
+        function <span class="apidocSignatureSpan">node-google-apps-script.util.</span>updateFileSource
+        <span class="apidocSignatureSpan">(existingFile, newFile)</span>
+        </a>
+    </h2>
+    <ul>
+    <li>description and source-code<pre class="apidocCodePre">function updateFileSource(existingFile, newFile) {
+  existingFile.source = newFile.content;
+}</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+            name: file.name,
+            type: util.getFileType(file),
+            source: file.content
+          });
+
+        } else {
+          // update
+          util.<span class="apidocCodeKeywordSpan">updateFileSource</span>(manifestFile, file);
+        }
+      });
+
+      return filesToUpload;
+    });
+};
+...</pre></li>
+    </ul>
+
+
+</div>
+
+<div class="apidocFooterDiv">
+    [ this document was created with
+    <a href="https://github.com/kaizhu256/node-utility2" target="_blank">utility2</a>
+    ]
+</div>
+</div>
+</body></html>
