@@ -378,7 +378,23 @@
       return filesToUpload;
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+  return manifestor.get()
+.then(function(config) {
+  fileId = config.fileId;
+  return manifestor.getExternalFiles(fileId)
+})
+.then(function(externalFiles) {
+  return manifestor.<span class="apidocCodeKeywordSpan">build</span>(externalFiles);
+})
+.then(function(files) {
+  return sendToGoogle(files, fileId);
+})
+.then(function() {
+  console.log(&#x27;The latest files were successfully uploaded to your Apps Script project.&#x27;.green);
+})
+...</pre></li>
     </ul>
 
 
@@ -440,7 +456,23 @@ var filesToUpload = _.filter(externalFiles, function(externalFile) {
       throw err;
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+.then(function() {
+  return manifestor.set(config);
+})
+.then(function() {
+  return mkdirp(subdir);
+})
+.then(function(config) {
+  return manifestor.<span class="apidocCodeKeywordSpan">getExternalFiles</span>(fileId)
+})
+.map(function(file) {
+  return writeExternalFile(file, subdir)
+})
+.catch(function(err) {
+  console.log(&#x27;Error running init command&#x27;.red);
+  throw err;
+...</pre></li>
     </ul>
 
 
@@ -458,7 +490,23 @@ var filesToUpload = _.filter(externalFiles, function(externalFile) {
       return config;
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+
+var overwritePromise = options.overwrite ?
+  Promise.resolve() :
+  manifestor.throwIfConfig();
+
+return overwritePromise
+  .then(function() {
+    return manifestor.<span class="apidocCodeKeywordSpan">set</span>(config);
+  })
+  .then(function() {
+    return mkdirp(subdir);
+  })
+  .then(function(config) {
+    return manifestor.getExternalFiles(fileId)
+  })
+...</pre></li>
     </ul>
 
 
@@ -480,7 +528,23 @@ var filesToUpload = _.filter(externalFiles, function(externalFile) {
       // swallow error
     });
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+  path: subdir,
+  fileId: fileId,
+  key: options.key
+};
+
+var overwritePromise = options.overwrite ?
+  Promise.resolve() :
+  manifestor.<span class="apidocCodeKeywordSpan">throwIfConfig</span>();
+
+return overwritePromise
+  .then(function() {
+    return manifestor.set(config);
+  })
+  .then(function() {
+    return mkdirp(subdir);
+...</pre></li>
     </ul>
 
 
@@ -502,7 +566,22 @@ var filesToUpload = _.filter(externalFiles, function(externalFile) {
   if (file.type === &#x27;html&#x27;) return &#x27;.html&#x27;;
   throw new Error(&#x27;Unsupported file type found&#x27;);
 }</pre></li>
-    <li>example usage<pre class="apidocCodePre">n/a</pre></li>
+    <li>example usage<pre class="apidocCodePre">...
+    .catch(function(err) {
+      console.log(&#x27;Error running init command&#x27;.red);
+      throw err;
+    });
+};
+
+function writeExternalFile(file, dir) {
+  var filename = file.name + util.<span class="apidocCodeKeywordSpan">getFileExtension</span>(file)
+  return fs.writeFileAsync(dir + &#x27;/&#x27; + filename, file.source)
+    .catch(function(err) {
+      console.log(&#x27;Could not write file &#x27; + filename);
+      throw err;
+    })
+}
+...</pre></li>
     </ul>
 
 
