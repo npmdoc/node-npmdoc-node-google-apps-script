@@ -1,6 +1,6 @@
 # npmdoc-node-google-apps-script
 
-#### api documentation for  [node-google-apps-script (v1.1.5)](https://github.com/danthareja/node-google-apps-script)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-google-apps-script.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-google-apps-script) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-google-apps-script.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-google-apps-script)
+#### basic api documentation for  [node-google-apps-script (v1.1.5)](https://github.com/danthareja/node-google-apps-script)  [![npm package](https://img.shields.io/npm/v/npmdoc-node-google-apps-script.svg?style=flat-square)](https://www.npmjs.org/package/npmdoc-node-google-apps-script) [![travis-ci.org build-status](https://api.travis-ci.org/npmdoc/node-npmdoc-node-google-apps-script.svg)](https://travis-ci.org/npmdoc/node-npmdoc-node-google-apps-script)
 
 #### The easiest way to develop Google Apps Script projects
 
